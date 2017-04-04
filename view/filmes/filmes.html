@@ -1,0 +1,32 @@
+<div class="container" >
+    <div class="page-header">        
+        <h2>Pesquisa</h2>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="filme.title" placeholder="Qual filme você quer?"/>
+                    <span class="input-group-btn">
+                        <a class="btn btn-primary" type="button" href="#/filmes/{{filme.title}}">Pesquisar</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <table class="table table-striped">
+        <thead>            
+            <th>Episódio</th> 
+            <th>Título</th>  
+            <th>Diretor</th>   
+            <th>Abertura</th>   
+        </thead>
+        <tbody>
+            <tr ng-repeat="filme in filmes | filter: filme.title">
+                <td>{{filme.episode_id}}</td>
+                <td><a href="#/filmes/{{filme.title}}">{{filme.title}}</a></td>
+                <td>{{filme.director}}</td>
+                <td>{{filme.opening_crawl | ellipsis}}</td>
+            </tr>
+        </tbody>
+    </table>   
+</div>

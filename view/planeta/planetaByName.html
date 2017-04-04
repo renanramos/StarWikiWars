@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3 col-md-3">
+            <div class="thumbnail">
+                <img src="img/img-default.png" alt="{{planeta.name}}" title="{{planeta.name}}">
+            </div>
+        </div>
+        <div class="page-header">
+            <h1>{{planeta.name}} <small>população {{planeta.population}}</small></h1>
+            <label>Diâmetro:</label> {{planeta.diameter /1000}} km</br>
+            <label>Período de rotação:</label> {{planeta.rotation_period}}</br>
+            <label>Período orbital:</label> {{planeta.orbital_period}}</br>
+            <label>Gravidade:</label> {{planeta.gravity}}</br>
+            <label>Terreno:</label> {{planeta.terrain}}</br>
+            <label>Água na Superfície:</label> {{planeta.surface_water}} %</br>
+            <label>Clima:</label> {{planeta.climate}}</br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
+            <legend><i class="glyphicon glyphicon-film"></i> Filmes</legend>
+            <div ng-class="{tbodyScroll: filmesTable.length > 6}">
+                <div class="loading-spiner-holder" ng-show="loading">
+                    <div class="loading-spiner">
+                        <h4>Aguarde...</h4>
+                        <img src="img/loader.gif" />
+                    </div>
+                </div>
+                <table class="table table-striped table-bordered" ng-hide="loading">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Episódio</th>
+                            <th>Diretor</th>
+                            <th>Lançamento</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="filme in filmesTable">
+                            <td>{{filme.title}}</td>
+                            <td>{{filme.episode_id}}</td>
+                            <td>{{filme.director}}</td>
+                            <td>{{filme.release_date | date : 'dd/MM/yyyy'}}</td>
+                            <td><a href="#/filmes/{{filme.title}}"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
+            <legend><i class="glyphicon glyphicon-user"></i> Pessoas</legend>
+            <div ng-class="{tbodyScroll: pessoasTable.length > 6}">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ano de nascimento</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="pessoa in pessoasTable">
+                            <td>{{pessoa.name}}</td>
+                            <td>{{pessoa.birth_year}}</td>
+                            <td><a href="#/pessoas/{{pessoa.name}}"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

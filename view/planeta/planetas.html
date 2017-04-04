@@ -1,0 +1,36 @@
+<div class="container" >
+    <div class="page-header">        
+        <h2>Pesquisa</h2>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="planetas.name" placeholder="Qual planeta você procura?"/>
+                    <span class="input-group-btn">
+                        <a class="btn btn-primary" type="button" href="#/planetas/{{planeta.name}}">Pesquisar</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <table class="table table-striped">
+        <thead>            
+            <th>Nome</th>
+            <th>Período de rotação</th>   
+            <th>Diâmetro</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="planeta in planetas | filter: planetas.name">
+                <td><a href="#/planetas/{{planeta.name}}">{{planeta.name}}</a></td>
+                <td>{{planeta.rotation_period}}</td>
+                <td>{{planeta.diameter/1000}} km</td>
+            </tr>
+        </tbody>
+    </table> 
+    <nav aria-label="...">
+        <ul class="pager">
+           <li class="previous" ><a href="#/planetas/page/{{paginaAnterior}}" ng-show="{{previous}}"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+            <li class="next" ><a href="#/planetas/page/{{proximaPagina}}" ng-show="{{next}}">Próximo<span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>    
+</div>

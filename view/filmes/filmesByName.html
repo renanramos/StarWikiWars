@@ -1,0 +1,140 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-md-3">
+            <div class="thumbnail">
+                <img src="img/img-default.png" alt="{{filme.title}}" title="{{filme.title}}">
+            </div>
+        </div>
+        <div class="page-header">
+            <h1>{{filme.title}} <small>Diretor {{filme.director}}</small></h1>
+            <div class="info">
+                <label>Episódio:</label> {{filme.episode_id}}</br>
+                <label>Produtor(es):</label> {{filme.producer}}</br>
+                <label>Data de lançamento:</label> {{filme.release_date | date: "dd/MM/yyyy"}}</br>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
+            <legend>
+                <h3>Texto abertura</h3>
+            </legend>
+            <div class="openingCrawl">
+                <p>
+                    {{filme.opening_crawl}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
+            <legend><i class="glyphicon glyphicon-globe"></i> Planetas</legend>
+            <div ng-class="{tbodyScroll: planetasTable.length > 6}">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Planetas</th>
+                            <th>População</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="planeta in planetasTable">
+                            <td>{{planeta.name}}</td>
+                            <td>{{planeta.population}}</td>
+                            <td><a href="#/planetas/{{planeta.name}}"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col col-md-12">
+            <legend><i class="glyphicon glyphicon-book"></i> Espécies</legend>
+            <div ng-class="{tbodyScroll: especiesTable.length > 6}">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Classificação</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="especie in especiesTable">
+                            <td>{{especie.name}}</td>
+                            <td>{{especie.classification}}</td>
+                            <td><a href="#/especies/{{especie.name}}"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
+            <legend><i class="glyphicon glyphicon-plane"></i> Naves</legend>
+            <div ng-class="{tbodyScroll: navesTable.length > 6}">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Modelo</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="nave in navesTable">
+                            <td>{{nave.name}}</td>
+                            <td>{{nave.model}}</td>
+                            <td><a href="#/naves/{{nave.name}}"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
+            <legend><i class="glyphicon glyphicon-user"></i> Pessoas</legend>
+            <div ng-class="{tbodyScroll: pessoasTable.length > 6}">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ano de nascimento</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="pessoa in pessoasTable">
+                            <td>{{pessoa.name}}</td>
+                            <td>{{pessoa.birth_year}}</td>
+                            <td><a href="#/pessoas/{{pessoa.name}}"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col col-md-12">
+            <legend><i class="glyphicon glyphicon-road"></i> Veículos</legend>
+            <div ng-class="{tbodyScroll: veiculosTable.length > 6}">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Qtde passageiros</th>
+                            <th>Visualizar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="veiculo in veiculosTable">
+                            <td>{{veiculo.name}}</td>
+                            <td>{{veiculo.passengers}}</td>
+                            <td><a href="#/veiculos/{{veiculo.name}}"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

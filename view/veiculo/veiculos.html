@@ -1,0 +1,38 @@
+<div class="container" >
+    <div class="page-header">        
+        <h2>Pesquisa</h2>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="veiculo.name" placeholder="Qual veículo você quer?"/>
+                    <span class="input-group-btn">
+                        <a class="btn btn-primary" type="button" href="#/veiculos/{{veiculo.name}}">Pesquisar</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <table class="table table-striped">
+        <thead>            
+            <th>Nome</th> 
+            <th>Modelo</th>  
+            <th>Fábrica</th>   
+            <th>Valor (créditos)</th>   
+        </thead>
+        <tbody>
+            <tr ng-repeat="veiculo in veiculos | filter: veiculo.name">
+                <td><a href="#/veiculos/{{veiculo.name}}">{{veiculo.name}}</a></td>
+                <td>{{veiculo.model}}</td>
+                <td>{{veiculo.manufacturer}}</td>
+                <td>{{veiculo.cost_in_credits}}</td>
+            </tr>
+        </tbody>
+    </table> 
+     <nav aria-label="...">
+        <ul class="pager">
+           <li class="previous" ><a href="#/veiculos/page/{{paginaAnterior}}" ng-show="{{previous}}"><span aria-hidden="true">&larr;</span> Anterior</a></li>
+            <li class="next" ><a href="#/veiculos/page/{{proximaPagina}}" ng-show="{{next}}">Próximo<span aria-hidden="true">&rarr;</span></a></li>
+        </ul>
+    </nav>     
+</div>
