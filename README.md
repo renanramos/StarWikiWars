@@ -1,6 +1,6 @@
 # StarWikiWars
 
-Projeto desenvolvimento com o objeto de reforçar os conhecimentos obtidos através do curso <a href="https://angularjs.org/">AngularJS</a>
+Projeto desenvolvido com o objeto de reforçar os conhecimentos obtidos através do curso <a href="https://angularjs.org/">AngularJS</a>
 disponibilizado pelo <a href="https://github.com/rodrigobranas">Rodrigo Branas</a>.
 
 # Descrição
