@@ -23,3 +23,6 @@ Acesse o diretório do projeto através do teminal e execute o comando abaixo:
 </code>
 <br><br>
 Após alguns segundos, será possível acessar a aplicação através do endereço <code>http://localhost:8080</code>.
+<br><br>
+
+Para testar a aplicação disponível neste repositório, acesse <a href="https://renanramos.github.io/starWikiWars/">aqui</a>.
